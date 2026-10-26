@@ -1,5 +1,15 @@
 # Community media credits
 
+## ScaleBFM_Plus animated preview
+
+Checked on **2026-10-27**, source revision **`65e4d524bd31fdc4284ba8c6e624fb0b0127da03`**.
+
+- **Source / maintainer:** [Hxxxz0 / ScaleBFM_Plus](https://github.com/Hxxxz0/ScaleBFM_Plus), a community extension of [ScaleBFM](https://github.com/zengweishuai/ScaleBFM).
+- **Original preview:** [ScaleTrack/assets/demos/supermimic_vs_official.gif](https://github.com/Hxxxz0/ScaleBFM_Plus/blob/65e4d524bd31fdc4284ba8c6e624fb0b0127da03/ScaleTrack/assets/demos/supermimic_vs_official.gif). Embedded directly through GitHub's LFS media endpoint at a display width of 480 pixels, preserving aspect ratio; no copy, excerpt, screenshot preparation, or re-encoding.
+- **Context:** The [source README](https://github.com/Hxxxz0/ScaleBFM_Plus/blob/65e4d524bd31fdc4284ba8c6e624fb0b0127da03/ScaleTrack/README.md#fast-training-with-a-learned-world-model-supermimic) identifies the left policy as official ScaleBFM-M and the right as SuperMimic, tracking an unseen LAFAN dance with the same simulator, motion, seed and camera. This is an upstream simulation demonstration, not an independent evaluation or a real-robot result.
+
+Rights in the original footage remain with its authors; it is excluded from this collection's CC0 dedication.
+
 ## Video previews
 
 These GIFs show demonstrations published by the linked projects. They are converted from the original videos; this collection did not run the experiments.
