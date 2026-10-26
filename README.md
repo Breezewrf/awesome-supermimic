@@ -71,11 +71,11 @@ The authors report surpassing SONIC's released-checkpoint return after **3 hours
 
 ## Community projects
 
-**29 community projects**, grouped by purpose. Descriptions were checked against upstream documentation and selected source files on **2026-10-26**; each entry links to the reviewed source revision. Results and demos are upstream reports; this list has not independently rerun the experiments.
+**30 community projects**, grouped by purpose. Existing descriptions were checked against upstream documentation and selected source files on **2026-10-26**; ScaleBFM_Plus was checked on **2026-10-27**. Each entry links to the reviewed source revision. Results and demos are upstream reports; this list has not independently rerun the experiments.
 
 - 🔬 **[Independent reproductions](#independent-reproductions)** — **3 projects** · Reproduce and evaluate the original method.
 - 🧩 **[Methods and task extensions](#methods-and-task-extensions)** — **11 projects** · Explore new methods, tasks and control settings.
-- 🛠️ **[Frameworks, robot ports and deployment](#frameworks-robot-ports-and-deployment)** — **12 projects** · Find a stack, robot port or deployment path.
+- 🛠️ **[Frameworks, robot ports and deployment](#frameworks-robot-ports-and-deployment)** — **13 projects** · Find a stack, robot port or deployment path.
 - 💡 **[Inspired experiments](#inspired-experiments)** — **3 projects** · Transfer ideas to other control problems.
 
 ## Independent reproductions
@@ -258,6 +258,18 @@ Changes to the method, new tasks and focused experiments in perception, morpholo
 ## Frameworks, robot ports and deployment
 
 Choose a simulator or robot platform, then find training, retargeting, export and deployment tools.
+
+### ScaleBFM_Plus · SuperMimic
+
+[Repository](https://github.com/Hxxxz0/ScaleBFM_Plus) · [Training and results](https://github.com/Hxxxz0/ScaleBFM_Plus/blob/65e4d524bd31fdc4284ba8c6e624fb0b0127da03/ScaleTrack/README.md#fast-training-with-a-learned-world-model-supermimic) · [Released checkpoint](https://github.com/Hxxxz0/ScaleBFM_Plus/tree/65e4d524bd31fdc4284ba8c6e624fb0b0127da03/ScaleTrack/checkpoints/supermimic_m)
+
+- **By Hxxxz0, building on ScaleBFM.** Integrates SuperMimic-style world-model learning and 32-step BPTT into ScaleTrack for G1 in IsaacLab / RSL-RL, retaining the humanoid transformer and tracking modes, with PPO-compatible policy export and playback.
+- **Upstream report:** Training on **309 h / 138k clips** from BONES-SEED, any4hdmi and LAFAN1 for **8.3 h on 16 RTX 5090s** yields **99.5% tracking success on 2,575 held-out motions**. On 386 dynamic test motions, both this policy and the official ScaleBFM-M checkpoint succeed on **376 / 386**, with mean global body-position errors of **6.35 cm** and **6.43 cm**, respectively.
+- **Useful context:** This is a community extension of ScaleBFM. The reported **26× per-step speedup** compares **0.65 s on 16 RTX 5090s** with PPO's **17.0 s on 8 RTX 5090s**; it is not a matched-compute or time-to-quality comparison. [Source snapshot](https://github.com/Hxxxz0/ScaleBFM_Plus/blob/65e4d524bd31fdc4284ba8c6e624fb0b0127da03/ScaleTrack/README.md).
+
+<a href="https://github.com/Hxxxz0/ScaleBFM_Plus/blob/65e4d524bd31fdc4284ba8c6e624fb0b0127da03/ScaleTrack/assets/demos/supermimic_vs_official.gif"><img src="https://media.githubusercontent.com/media/Hxxxz0/ScaleBFM_Plus/65e4d524bd31fdc4284ba8c6e624fb0b0127da03/ScaleTrack/assets/demos/supermimic_vs_official.gif" width="480" alt="Simulation · official ScaleBFM-M (left) and SuperMimic (right), unseen LAFAN dance"></a><br><sub>Simulation · official ScaleBFM-M (left) and SuperMimic (right), unseen LAFAN dance · Source: Hxxxz0 / ScaleBFM_Plus</sub>
+
+<br>
 
 ### HoloMotion · SuperMimic
 
