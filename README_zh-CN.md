@@ -71,9 +71,9 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 ## 社区项目
 
-按用途收录 **30 个社区项目**。已有条目于 **2026-10-26** 对照上游文档及部分源码核查，ScaleBFM_Plus 于 **2026-10-27** 核查，每项附有对应版本的来源链接。成绩和演示均为上游报告，本清单未独立重跑实验。
+按用途收录 **31 个社区项目**。已有条目于 **2026-10-26** 对照上游文档及部分源码核查，ScaleBFM_Plus 与 SuperMimic Mjlab 于 **2026-10-27** 核查，每项附有对应版本的来源链接。成绩和演示均为上游报告，本清单未独立重跑实验。
 
-- 🔬 **[独立复现](#独立复现)** — **3 个项目** · 复现与评估原始方法。
+- 🔬 **[独立复现](#独立复现)** — **4 个项目** · 复现与评估原始方法。
 - 🧩 **[方法与任务扩展](#方法与任务扩展)** — **11 个项目** · 探索算法改动、新任务和控制场景。
 - 🛠️ **[框架、本体适配与部署](#框架本体适配与部署)** — **13 个项目** · 按框架、本体和部署需求选实现。
 - 💡 **[方法借鉴与探索](#方法借鉴与探索)** — **3 个项目** · 将相关思路迁移到其他控制问题。
@@ -115,6 +115,18 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 - **选择时注意：** 实验记录区分已复现、部分复现和待完成项；BONES-SEED 受数据许可限制，未覆盖真机迁移，A6000 耗时也不能直接等同于 H100。 [核查版本](https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/README.md)。
 
 <a href="https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/README.md"><img src="assets/community/vibe-results.png" width="720" alt="报告截图 · 单张 RTX A6000 上的复现与消融"></a><br><sub>报告截图 · 单张 RTX A6000 上的复现与消融</sub>
+
+<br>
+
+### SuperMimic Mjlab
+
+[仓库](https://github.com/Breezewrf/supermimic_mjlab) · [安装](https://github.com/Breezewrf/supermimic_mjlab/blob/23c76cad5bf41110709c7f929b54c1da1be6b248/doc/setup_en.md) · [消融实验与检查点](https://github.com/Breezewrf/supermimic_mjlab/blob/23c76cad5bf41110709c7f929b54c1da1be6b248/README.md#ablation-results-and-released-checkpoint)
+
+- **作者：Breezewrf。** 基于 mjlab 为 Unitree G1 独立复现 SuperMimic，提供完整的性能提升消融实验、多动作训练、完整动作评估，以及已发布的策略与世界模型检查点。
+- **上游报告：** 所选检查点在全部 40 条 LAFAN 动作的固定起点、完整片段确定性评估中，达到 **40 / 40 成功、平均完成率 100%、归一化回报 0.8528**。使用 **单张 RTX A6000 48 GB**、4,096 个环境和 FP32 网络，训练 **15,000 次迭代约需 4 小时**。
+- **性能提升消融：** 完整记录从 Actor/Critic 输入归一化，依次加入躯干坐标系下的动作朝向锚点、世界模型归一化及修正余弦学习率调度的提升过程：在全部 40 条动作、15,000 次迭代的评估中，归一化回报均值为 **0.6016 → 0.8130 → 0.8504 → 0.8526**。最终重复运行均值与上述所选检查点分数分别报告。 [核查版本](https://github.com/Breezewrf/supermimic_mjlab/blob/23c76cad5bf41110709c7f929b54c1da1be6b248/README.md)。
+
+<a href="https://github.com/Breezewrf/supermimic_mjlab/blob/23c76cad5bf41110709c7f929b54c1da1be6b248/doc/assets/evaluation.png"><img src="https://raw.githubusercontent.com/Breezewrf/supermimic_mjlab/23c76cad5bf41110709c7f929b54c1da1be6b248/doc/assets/evaluation.png" width="720" alt="评估面板 · SuperMimic Mjlab 回报、成功率与逐动作完成率"></a><br><sub>上游评估面板 · 回报、成功率与逐动作完成率 · 各配置消融对比见上方链接</sub>
 
 <br>
 

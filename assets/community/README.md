@@ -1,5 +1,15 @@
 # Community media credits
 
+## SuperMimic Mjlab performance figure
+
+Checked on **2026-10-27**, source revision **`23c76cad5bf41110709c7f929b54c1da1be6b248`**.
+
+- **Source / maintainer:** [Breezewrf / supermimic_mjlab](https://github.com/Breezewrf/supermimic_mjlab).
+- **Original preview:** [doc/assets/evaluation.png](https://github.com/Breezewrf/supermimic_mjlab/blob/23c76cad5bf41110709c7f929b54c1da1be6b248/doc/assets/evaluation.png). Embedded directly from the pinned source at a display width of 720 pixels, preserving aspect ratio; no copy, excerpt, screenshot preparation or re-encoding.
+- **Context:** The figure is the upstream evaluation dashboard showing normalized return, successful motion count, success rate, per-motion return/completion and environment steps. It shows the selected training run; the separate configuration ablation table in the source README reports the progression from input normalization through the orientation anchor, world-model normalization and corrected learning-rate schedule. These are upstream reports, not independent measurements by this collection.
+
+Rights in the original footage remain with its authors; it is excluded from this collection's CC0 dedication.
+
 ## ScaleBFM_Plus animated preview
 
 Checked on **2026-10-27**, source revision **`65e4d524bd31fdc4284ba8c6e624fb0b0127da03`**.
