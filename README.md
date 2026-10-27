@@ -71,9 +71,9 @@ The authors report surpassing SONIC's released-checkpoint return after **3 hours
 
 ## Community projects
 
-**30 community projects**, grouped by purpose. Existing descriptions were checked against upstream documentation and selected source files on **2026-10-26**; ScaleBFM_Plus was checked on **2026-10-27**. Each entry links to the reviewed source revision. Results and demos are upstream reports; this list has not independently rerun the experiments.
+**31 community projects**, grouped by purpose. Existing descriptions were checked against upstream documentation and selected source files on **2026-10-26**; ScaleBFM_Plus and SuperMimic Mjlab were checked on **2026-10-27**. Each entry links to the reviewed source revision. Results and demos are upstream reports; this list has not independently rerun the experiments.
 
-- 🔬 **[Independent reproductions](#independent-reproductions)** — **3 projects** · Reproduce and evaluate the original method.
+- 🔬 **[Independent reproductions](#independent-reproductions)** — **4 projects** · Reproduce and evaluate the original method.
 - 🧩 **[Methods and task extensions](#methods-and-task-extensions)** — **11 projects** · Explore new methods, tasks and control settings.
 - 🛠️ **[Frameworks, robot ports and deployment](#frameworks-robot-ports-and-deployment)** — **13 projects** · Find a stack, robot port or deployment path.
 - 💡 **[Inspired experiments](#inspired-experiments)** — **3 projects** · Transfer ideas to other control problems.
@@ -115,6 +115,18 @@ Reimplementations of the original method, with training, evaluation and reproduc
 - **Useful context:** The experiment log distinguishes reproduced, partial and pending results. BONES-SEED remains data-gated, hardware transfer is out of scope, and the A6000 timings are not H100 timings. [Source snapshot](https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/README.md).
 
 <a href="https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/README.md"><img src="assets/community/vibe-results.png" width="720" alt="Report screenshot · reproduction and ablations on one RTX A6000"></a><br><sub>Report screenshot · reproduction and ablations on one RTX A6000</sub>
+
+<br>
+
+### SuperMimic Mjlab
+
+[Repository](https://github.com/Breezewrf/supermimic_mjlab) · [Setup](https://github.com/Breezewrf/supermimic_mjlab/blob/23c76cad5bf41110709c7f929b54c1da1be6b248/doc/setup_en.md) · [Ablations and checkpoint](https://github.com/Breezewrf/supermimic_mjlab/blob/23c76cad5bf41110709c7f929b54c1da1be6b248/README.md#ablation-results-and-released-checkpoint)
+
+- **By Breezewrf.** An independent SuperMimic reproduction for Unitree G1 in mjlab, with a complete performance-improvement ablation study, multi-motion training, full-clip evaluation and released policy/world-model checkpoints.
+- **Upstream report:** On all 40 LAFAN motions, the selected checkpoint achieves **40 / 40 successful motions**, **100% mean completion** and **0.8528 normalized return** in fixed-start, full-clip deterministic evaluation. Training for **15,000 iterations takes approximately 4 hours on one RTX A6000 48 GB**, with 4,096 environments and FP32 networks.
+- **Useful context:** Documents the full progression from Actor/Critic input normalization through a torso-frame motion orientation anchor, world-model normalization and a corrected cosine learning-rate schedule: mean normalized return **0.6016 → 0.8130 → 0.8504 → 0.8526** at 15,000 iterations over all 40 motions. The final rerun mean is distinct from the selected checkpoint score above. [Source snapshot](https://github.com/Breezewrf/supermimic_mjlab/blob/23c76cad5bf41110709c7f929b54c1da1be6b248/README.md).
+
+<a href="https://github.com/Breezewrf/supermimic_mjlab/blob/23c76cad5bf41110709c7f929b54c1da1be6b248/doc/assets/evaluation.png"><img src="https://raw.githubusercontent.com/Breezewrf/supermimic_mjlab/23c76cad5bf41110709c7f929b54c1da1be6b248/doc/assets/evaluation.png" width="720" alt="Evaluation dashboard · SuperMimic Mjlab return, success and per-motion completion"></a><br><sub>Upstream evaluation dashboard · return, success and per-motion completion · configuration ablations linked above</sub>
 
 <br>
 
